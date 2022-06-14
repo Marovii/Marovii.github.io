@@ -1,25 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { useRef } from 'react';
+import Nav from './Nav';
+import Hero from './Hero';
+import About from './About';
+import Projects from './Projects';
+import Contact from './Contact';
+import Footer from './Footer';
 
-function App() {
+const App = () => {
+  const pageRefs = useRef({});
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Nav pageRefs={pageRefs} />
+      <Hero />
+      <About pageRefs={pageRefs} />
+      <Projects pageRefs={pageRefs} />
+      <Contact pageRefs={pageRefs} />
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
